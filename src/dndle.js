@@ -165,7 +165,7 @@ const app = new Reef('main', {
       <div id="monster-chooser">${monsterChooser.html()}</div>
       <div id="solution" class="${props.gameOver ? 'shown' : 'hidden'}">
         <p id="solution-score">DNDle ${DayNumber} (${solutionState})</p>
-        <p id="solution-name">${Target[6]} (CR ${Target[7]})</p>
+        <p id="solution-name">${Target[6]} (<abbr title="Challenge Rating">CR</abbr> ${Target[7]})</p>
         <div class="example">
           ${Characteristics.map(c=>`<abbr title="${c[1]}" class="char">${c[0]}</abbr>`).join('')}
           <div class="tile tile-filled">${Target[0]}</div>
