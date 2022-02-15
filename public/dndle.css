@@ -400,6 +400,11 @@ dt {
 
 .setting {
   display: flex;
+  padding: 15px 0 5px;
+}
+
+.setting + .setting {
+  border-top: 1px solid #d3d6da;
 }
 
 .setting-description {
@@ -412,6 +417,10 @@ label {
 
 .setting p {
   font-size:  12px;
+}
+
+.setting a {
+  align-self: center;
 }
 
 /* Checkboxes as "switches" */

@@ -257,6 +257,20 @@ const app = new Reef('main', {
             </div>
             <input type="checkbox" id="setting-hard-mode" data-setting="hardMode" @checked="${props.hardMode}">
           </div>
+          <div class="setting">
+            <div class="setting-description">
+              <label>Why is this a thing?</label>
+              <p>Read more about the history of DNDle.</p>
+            </div>
+            <a href="https://danq.me/dndle">Blog</a>
+          </div>
+          <div class="setting">
+            <div class="setting-description">
+              <label>Open source</label>
+              <p>Make your own version about... I don't know: <em>Pokemon</em> or something.</p>
+            </div>
+            <a href="https://github.com/Dan-Q/dndle">GitHub</a>
+          </div>
         </div>
       </div>
       <div id="toast" class="${props.toast ? 'shown' : 'hidden'}">${props.toast}</div>
