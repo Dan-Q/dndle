@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNDle - like Wordle, but for Dungeons &amp; Dragons (5e)</title>
+  <link rel="stylesheet" type="text/css" href="dndle.css">
+  <meta name="application-name" content="DNDle">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A guessing game like Wordle, but you're trying to guess Dungeons &amp; Dragons (5e) monsters by choosing characteristic scores.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" sizes="192x192" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta property="og:url" content="https://dndle.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DNDle">
+  <meta property="og:description" content="A guessing game like Wordle, but you're trying to guess Dungeons &amp; Dragons (5e) monsters by choosing characteristic scores.">
+  <meta property="og:image" content="https://dndle.app/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@scatmandan">
+  <meta name="twitter:url" content="https://dndle.app/">
+  <meta name="twitter:title" content="DNDle">
+  <meta name="twitter:description" content="A guessing game like Wordle, but you're trying to guess Dungeons &amp; Dragons (5e) monsters by choosing characteristic scores.">
+  <meta name="twitter:image" content="https://dndle.app/tc.png">
+  <link rel="author" href="https://danq.me/">
+</head>
+<body>
+  <div id="game">
+    <header>
+      <button data-dialog="Help" class="header-button" aria-label="Help">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path fill="#878a8c" d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
+        </svg>
+      </button>
+      <div id="title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="31.189" height="36" xmlns:v="https://vecta.io/nano"><path d="M15.248 0L.541 9.85 0 27.165 15.68 36l15.508-8.846-.564-18.001zm.018.817c.063-.001.116.019.134.047l8.713 10.61c.158.207.157.195-.087.214l-17.761.047c-.198-.001-.188-.043-.04-.228L15.092.898c.039-.055.112-.078.174-.08zm1.702.945l12.587 7.567c.184.125.222.15-.054.275l-4.216 1.93c-.189.09-.214.083-.322-.047zm-3.733.355c.004.008-.053.07-.161.194l-7.661 9.149c-.123.153-.179.15-.369.087L1.412 9.899l11.608-7.641.214-.141zm16.883 7.942c.06-.004.063.052.074.214l.362 14.873-5.033-12.768c-.057-.118-.067-.212.087-.282l4.33-1.977c.088-.037.145-.058.181-.06zm-29.035.395l3.733 1.696c.128.06.13.07.067.255L.621 24.926zm23.177 1.877h0c.234.004.178.091.101.214L15.5 28.13c-.163.243-.146.251-.302.014L5.976 12.587c-.128-.211-.139-.212.121-.208zm.724.409c.017-.007.032.044.067.174l5.342 13.572c.077.224.084.304-.141.355L16.09 28.793c-.234.037-.211-.022-.114-.188l8.921-15.697c.052-.097.07-.16.087-.167zM5.4 12.888c.017-.012.036.024.094.141l9.209 15.536c.062.124.095.253-.161.214L1.01 26.823c-.287-.053-.278-.16-.201-.442l4.524-13.318c.034-.096.05-.162.067-.174zM1.881 27.6l12.976 1.87c.177.028.2.098.208.268l.281 5.281c.024.18-.016.218-.188.114zm27.453.014l-13.13 7.6c-.198.101-.193.043-.208-.121l-.288-5.375c.001-.128-.03-.215.147-.241z" fill="#1a1a1b"/></svg>
+        <h1>DNDle</h1>
+      </div>
+      <button data-dialog="Stats" id="statistics-button" class="header-button" aria-label="Statistics">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path fill="#878a8c" d="M16,11V3H8v6H2v12h20V11H16z M10,5h4v14h-4V5z M4,11h4v8H4V11z M20,19h-4v-6h4V19z"></path>
+        </svg>
+      </button>
+      <button data-dialog="Settings" id="settings-button" class="header-button" aria-label="Settings">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path fill="#878a8c" d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"></path>
+        </svg>
+      </button>
+    </header>
+    <main>
+      <p>Loading... please wait...</p>
+      <p id="no-js-warning">(If this doesn't go away, perhaps check is Javascript is enabled in your browser?)</p>
+    </main>
+    <div id="overlay-wrapper"></div>
+    <footer>
+      <ul>
+        <li>
+          A
+          <a href="https://things.danq.me/">thing</a>
+          by
+          <a href="https://danq.me/">Dan Q</a>
+        </li>
+        <li>
+          Dungeons & Dragons is a trademark of Wizards of the Coast LLC; this site is not affiliated with Wizards of the Coast LLC.
+        </li>
+      </ul>
+    </footer>
+  </div>
+  <script type="text/javascript" src="dndle.js"></script>
+</body>
+</html>
