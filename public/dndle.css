@@ -93,6 +93,10 @@ header {
   border-bottom:  1px solid #d3d6da;
 }
 
+header button {
+  margin: 0 5px;
+}
+
 h2, h3, p, li {
   margin: 0.8rem 0;
 }
@@ -157,6 +161,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 464px; /* anti-CLS */
 }
 
 #game {
@@ -240,7 +245,7 @@ main {
 }
 
 .key-special {
-  width: 4rem;
+  min-width: 3rem;
   flex-grow: 2;
 }
 

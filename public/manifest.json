@@ -1,0 +1,26 @@
+{
+  "background_color": "#ffffff",
+  "description": "A guessing game like Wordle, but you're trying to guess Dungeons & Dragons (5e) monsters by choosing characteristic scores.",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "name": "DNDle",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "DNDle",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "tc.png",
+      "type": "image/png",
+      "sizes": "1000x1000",
+      "purpose": "any maskable"
+    }
+  ]
+}

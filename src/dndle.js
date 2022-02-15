@@ -20,7 +20,6 @@ let firstRun = true;
 let toastHider;
 let SortedBeastiary = [...Beastiary];
 SortedBeastiary.sort((a,b)=>a[6]>b[6]);
-console.log(SortedBeastiary);
 
 // Set up state storage
 const State = new Reef.Store({
@@ -437,13 +436,8 @@ if(State.data.gameOver) setTimeout(()=>app.data.dialogStats=true, 800);
 // If this is the first time visiting the site, show the help
 if(firstRun) app.data.dialogHelp = true;
 
-// DEBUG:
-// Reef.debug(true);
-// window.DNDle = {
-//   State: State,
-//   Reef: Reef,
-//   DayNumber: DayNumber,
-//   Target: Target,
-//   Beastiary: Beastiary,
-//   Shuffle: Shuffle,
-// };
+// Try to install the service worker
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+
