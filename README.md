@@ -2,7 +2,7 @@
 
 A [Wordle](https://www.nytimes.com/games/wordle)-clone with a [Dungeons & Dragons](https://dnd.wizards.com/) (5e) theme. Guess the "monster of the day" by either entering values for the six characteristics (STR, DEX, CON, INT, WIS, CHA) or by choosing a monster from the Monster Manual. You'll be told which values were correct (green = right value, right characteristic), present (yellow = right value, wrong characteristic), or absent (grey = wrong value). You have eight guesses to find the monster. A new monster appears every 24 hours.
 
-Originally thrown together over a weekend. Apologies for some of the more-apalling bits of code.
+Originally thrown together over a weekend. Apologies for some of the more-apalling bits of code. [Read more about it on my blog](https://danq.me/dndle).
 
 ## Play online
 
