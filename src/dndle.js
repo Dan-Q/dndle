@@ -70,13 +70,13 @@ const board = new Reef('#board', {
       let monster = '';
       if(i < State.data.guessesMade) monster = ((Beastiary.find(b=>b.slice(0,6).join(',') == props.guess[i].join(','))) || [])[6] || '';
       for(let j = 0; j < Characteristics.length; j++) {
-        const tileValue = (props.guess[i] ?? [])[j] ?? '';
+        const tileValue = (props.guess[i] || [])[j] || '';
         const tileState = (tileValue == '') ? 'tile-empty' : 'tile-filled';
         let tileAnim = '';
         if ((props.lastAction == 'key-number') && (i == props.guessesMade) && j == (props.entryColumn - 1)) tileAnim = 'anim-blip';
         if ((props.lastAction == 'key-enter') && (i == props.guessesMade - 1) && (props.entryColumn == 0)) tileAnim = 'anim-flip';
 
-        const guessQualityIndicator = (props.guessQuality[i] ?? [])[j] ?? 'untested';
+        const guessQualityIndicator = (props.guessQuality[i] || [])[j] || 'untested';
         rowTiles.push(`<div class="tile ${tileAnim} ${tileState} guess-${guessQualityIndicator}">${tileValue}</div>`);
       }
       boardRows.push(`
@@ -98,7 +98,7 @@ const keyboard = new Reef('#keyboard', {
     if(State.data.hardMode) return '';
     let keys = [];
     for(let i = 1; i <= HighestStat; i++) {
-      const keyQualityIndicator = props.keyQuality[i] ?? 'untested';
+      const keyQualityIndicator = props.keyQuality[i] || 'untested';
       keys.push(`<button data-key="${i}" class="key key-${keyQualityIndicator}">${i}</button>`);
     }
     return `
@@ -349,7 +349,7 @@ function keyPressed(key){
     currentState.guess[currentState.guessesMade][currentState.entryColumn] = undefined;
   } else if(currentState.entryColumn < Characteristics.length) {
     currentState.lastAction = 'key-number';
-    currentState.guess[currentState.guessesMade] ??= [];
+    currentState.guess[currentState.guessesMade] = currentState.guess[currentState.guessesMade] || [];
     currentState.guess[currentState.guessesMade][currentState.entryColumn] = key;
     currentState.entryColumn += 1;
   }
