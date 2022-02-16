@@ -1,4 +1,6 @@
-var cacheName = 'v1'; 
+var cacheName = 'v2';
+
+// precache everything that matters for DNDle
 var cacheFiles = [
   '/',
   '/dndle.css',
@@ -27,6 +29,17 @@ self.addEventListener('activate', function(e) {
   );
 });
 
-self.addEventListener('fetch', event=>{
-  event.respondWith( caches.match(event.request).then((response) => response || fetch(event.request)) );
+// use stale-while-revalidate caching (serve from cache, check network for update in background)
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.open(cacheName).then(function(cache) {
+      return cache.match(event.request).then(function (response) {
+        var fetchPromise = fetch(event.request).then(function (networkResponse) {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
+        return response || fetchPromise;
+      });
+    }),
+  );
 });
