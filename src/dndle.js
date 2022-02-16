@@ -2,7 +2,7 @@ import Reef from '../externals/reef.11.0.1.es.min.js';
 import Beastiary from './beastiary.js';
 import Shuffle from './shuffle.js';
 
-const Epoch = new Date("2022-02-15T19:00:00.000+00:00");
+const Epoch = new Date("2022-02-16T10:00:00.000+00:00");
 const DayNumber = Math.ceil((new Date() - Epoch) / 86400000);
 const Target = Beastiary[Shuffle[DayNumber % Shuffle.length]];
 const HighestStat = Math.max(...Beastiary.map(b=>Math.max(...b.slice(0,6))));
