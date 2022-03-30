@@ -19,6 +19,7 @@ const GameLaunched = DayNumber > 0;
 let firstRun = true;
 let toastHider;
 let SortedBeastiary = [...Beastiary];
+let app;
 SortedBeastiary.sort((a,b)=>a[6]>b[6]);
 
 // Set up state storage
@@ -129,14 +130,15 @@ const countdownTimer = new Reef('#monster-countdown-timer', {
 });
 // Update countdown timer now and every second
 function updateCountdownTimer(){
-  const nextMonsterAt = new Date(Epoch.valueOf());
-  nextMonsterAt.setDate(nextMonsterAt.getDate() + DayNumber);
+  const nextMonsterAt = new Date(Epoch.valueOf() + (86400000 * DayNumber));
   const timeToNext = (nextMonsterAt - new Date()) / 1000;
   if(timeToNext < 0){
     countdownTimer.data.timeToNext = '<strong class="anim-vibrate">On the way!</strong>'
     State.data.gameOver = true;
-    app.data.dialogStats = true;
-    app.data.toast = '<strong style="font-size: 200%">A new monster is coming!</strong>';
+    if(app){
+      app.data.dialogStats = true;
+      app.data.toast = '<strong style="font-size: 200%">A new monster is coming!</strong>';
+    }
     setTimeout(()=>window.location.reload(), 4000);
     return;
   }
@@ -148,7 +150,7 @@ function updateCountdownTimer(){
 updateCountdownTimer();
 setInterval(updateCountdownTimer, 1000);
 
-const app = new Reef('main', {
+app = new Reef('main', {
   data: {
     dialogHelp: false,
     dialogStats: false,
