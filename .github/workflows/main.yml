@@ -28,6 +28,6 @@ jobs:
       - name: Set up GitHub Pages
         uses: actions/configure-pages@v4
       - name: Deploy site
-        uses: actions/deploy-pages@v4
+        uses: actions/upload-pages-artifact@v2
         with:
-          artifact_name: 'public'
+          path: 'public'
