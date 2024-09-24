@@ -358,7 +358,7 @@ const Beastiary = [
   [ 13, 15, 12,  8, 13, 10, 'Giant Owl',                '1/4' ],
   [ 10, 18, 13,  2, 10,  3, 'Giant Poisonous Snake',    '1/4' ],
   [  7, 15, 11,  2, 10,  4, 'Giant Rat',                '1/8' ],
-  [ 15, 13, 15,  1, 19,  3, 'Giant Scorpion',           '3' ],
+  [ 15, 13, 15,  1,  9,  3, 'Giant Scorpion',           '3' ],
   [ 12, 15, 11,  2, 15,  5, 'Giant Sea Horse',          '1/2' ],
   [ 23, 11, 21,  1, 10,  5, 'Giant Shark',              '5' ],
   [ 14, 16, 12,  2, 11,  4, 'Giant Spider',             '1' ],
