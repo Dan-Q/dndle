@@ -393,7 +393,7 @@ const Beastiary = [
   [ 16, 10, 12,  2, 10,  7, 'Riding Horse',             '1/4' ],
   [ 18, 14, 15,  3, 12,  8, 'Saber-Toothed Tiger',      '2' ],
   [  2, 11,  8,  1,  8,  2, 'Scorpion',                 '0' ],
-  [  1, 12,  8,  1, 10,  2, 'Sea Hose',                 '0' ],
+  [  1, 12,  8,  1, 10,  2, 'Sea Horse',                '0' ],
   [  2, 14,  8,  1, 10,  2, 'Spider',                   '0' ],
   [  5, 15, 10,  2, 12,  4, 'Swarm of Bats',            '1/4' ],
   [  3, 13, 10,  1,  7,  1, 'Swarm of Insects',         '1/2' ],
