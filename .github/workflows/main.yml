@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Compile JS
-        run: npx rollup -c
+        run: npx rollup -c && echo dndle.app > public/CNAME
       #- name: Assign domain name
       #  run: echo "dndle.app" > build/CNAME
       - name: Deploy site
