@@ -1,4 +1,10 @@
 {
+  "name": "dndle",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dan-Q/dndle.git"
+  },
   "dependencies": {
     "rollup": "^2.67.1"
   },
