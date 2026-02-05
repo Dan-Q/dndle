@@ -22,8 +22,8 @@ jobs:
         run: npm ci
       - name: Compile JS
         run: npx rollup -c
-      #- name: Assign domain name
-      #  run: echo "dndle.app" > build/CNAME
+      - name: Assign domain name
+        run: echo "dndle.app" > public/CNAME
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v3
         with:
