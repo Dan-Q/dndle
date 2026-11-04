@@ -6,7 +6,7 @@
     "url": "https://github.com/Dan-Q/dndle.git"
   },
   "dependencies": {
-    "rollup": "^2.67.1"
+    "rollup": "^2.80.0"
   },
   "scripts": {
     "start": "rollup -cw",
